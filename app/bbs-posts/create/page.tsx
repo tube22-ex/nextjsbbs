@@ -8,7 +8,6 @@ import React from 'react'
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { Textarea } from '@/components/ui/textarea';
-import { useRouter } from 'next/navigation';
 import { postBBS } from '@/app/actions/postBBSAction';
 
 const formSchema = z.object({

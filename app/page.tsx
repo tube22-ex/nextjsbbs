@@ -4,7 +4,7 @@ import { BBSData } from "./types/types";
 //export const port = "http://localhost:3000";
 
 async function  getBBSAllData(){
-  const response = await fetch(`${process.env.PORT}/api/post`,{
+  const response = await fetch(`https://${process.env.PORT}/api/post`,{
     cache: "no-store",
   })
   
