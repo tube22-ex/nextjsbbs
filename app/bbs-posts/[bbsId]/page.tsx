@@ -3,7 +3,8 @@ import Link from "next/link";
 import React from 'react'
 
 async function  getDetailBBSData(id: number){
-    const response = await fetch(`https://${process.env.PORT}/api/post/${id}`,{
+  const url = process.env.NEXT_PUBLIC_VERCEL_URL || 'localhost:3000'
+    const response = await fetch(`https://${url}/api/post/${id}`,{
       cache: "no-store",
     })
     
