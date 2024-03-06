@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from '@/components/ui/button';
-import { Form,FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form,FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '@/components/ui/input';
 import React from 'react'
@@ -11,7 +11,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useRouter } from 'next/navigation';
 import { postBBS } from '@/app/actions/postBBSAction';
 
-export const formSchema = z.object({
+const formSchema = z.object({
   username : 
     z.string()
     .min(2, {message:"ユーザー名は2文字以上で入力してください。"}),
@@ -25,7 +25,6 @@ export const formSchema = z.object({
 })
 
 const CreateBBSPage = () => {
-  const router = useRouter();
 
   const form = useForm({
     resolver: zodResolver(formSchema),
