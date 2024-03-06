@@ -1,10 +1,9 @@
-import { port } from '@/app/page';
 import { BBSData } from '@/app/types/types';
 import Link from "next/link";
 import React from 'react'
 
 async function  getDetailBBSData(id: number){
-    const response = await fetch(`${port}/api/post/${id}`,{
+    const response = await fetch(`${process.env.PORT}/api/post/${id}`,{
       cache: "no-store",
     })
     
