@@ -5,8 +5,7 @@ import { BBSData } from "./types/types";
 
 async function  getBBSAllData(){
   const url = process.env.NEXT_PUBLIC_VERCEL_URL || 'localhost:3000'
-  console.log(`https://${url}/api/post`);
-  const response = await fetch(`https://${url}/api/post`,{
+  const response = await fetch(`http://${url}/api/post`,{
     cache: "no-store",
   })
   

@@ -5,6 +5,7 @@ import { z } from "zod"
 import prisma from "../../lib/prismaClient";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import Home from "../page";
 
 const formSchema = z.object({
     username : 
@@ -30,7 +31,7 @@ export const postBBS = async({username, title, content}: z.infer<typeof formSche
     });
 
     revalidatePath("/");
-
+    Home;
     redirect("/");
 }
 
